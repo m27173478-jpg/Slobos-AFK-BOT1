@@ -256,18 +256,6 @@
                                     <h4 class="font-semibold line-clamp-2">Lịch sử (giai đoạn 1954-1975)</h4>
                                 </a>
                             </li>
-                            <li class="border-t border-white/5 pt-3 group cursor-pointer">
-                                <a href="#tin-tuc" class="block hover:text-emerald-300 transition-colors">
-                                    <span class="text-xs text-slate-400 block mb-1">18/11/2026</span>
-                                    <h4 class="font-semibold line-clamp-2">Lịch sử (giai đoạn 1954-1975)</h4>
-                                </a>
-                            </li>
-                            <li class="border-t border-white/5 pt-3 group cursor-pointer">
-                                <a href="#tin-tuc" class="block hover:text-emerald-300 transition-colors">
-                                    <span class="text-xs text-slate-400 block mb-1">18/11/2026</span>
-                                    <h4 class="font-semibold line-clamp-2">Lịch sử (giai đoạn 1954-1975)</h4>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -378,33 +366,10 @@
                 </div>
             </div>
 
-            <!-- News Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-container">
+            <!-- News Cards Grid (Only the middle card kept and centered) -->
+            <div class="max-w-md mx-auto" id="news-container">
                 
-                <!-- News Card 1 -->
-                <article class="news-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col" data-category="phong-trao">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="https://36hn.wordpress.com/wp-content/uploads/2016/06/redsvn-ha-noi-sau-1954-17.jpg" 
-                             alt="Lịch sử (giai đoạn 1954-1975)" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-pvs-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Hoạt động Đoàn</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <span class="text-xs text-slate-400 block mb-2"><i class="far fa-calendar-alt mr-1"></i> 18/11/2026</span>
-                            <h3 class="font-bold text-lg text-slate-900 hover:text-pvs-green transition-colors line-clamp-2 mb-3">
-                                Lịch sử (giai đoạn 1954-1975)
-                            </h3>
-                            <p class="text-slate-600 text-xs sm:text-sm line-clamp-3">
-                                Chuyên đề tìm hiểu những dấu mốc lịch sử hào hùng của dân tộc Việt Nam trong giai đoạn 1954 - 1975...
-                            </p>
-                        </div>
-                        <button onclick="openNewsModal('Lịch sử (giai đoạn 1954-1975)', 'Chuyên đề tìm hiểu những dấu mốc lịch sử hào hùng, những tư liệu quý giá và tinh thần đấu tranh kiên cường của quân và dân ta trong giai đoạn 1954 - 1975.', '18/11/2026', 'Hoạt động Đoàn', 'https://36hn.wordpress.com/wp-content/uploads/2016/06/redsvn-ha-noi-sau-1954-17.jpg')" class="mt-4 inline-flex items-center text-xs font-bold text-pvs-green hover:text-pvs-purple transition-colors">
-                            Đọc tiếp bài viết <i class="fas fa-chevron-right ml-1"></i>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- News Card 2 -->
+                <!-- News Card (Middle) -->
                 <article class="news-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col" data-category="thong-bao">
                     <div class="relative overflow-hidden h-48">
                         <img src="https://36hn.wordpress.com/wp-content/uploads/2016/06/redsvn-ha-noi-sau-1954-17.jpg" 
@@ -422,29 +387,6 @@
                             </p>
                         </div>
                         <button onclick="openNewsModal('Lịch sử (giai đoạn 1954-1975)', 'Thông báo triển khai nội dung ôn tập, sinh hoạt ngoại khóa và triển lãm hình ảnh tư liệu quý giá về Lịch sử Việt Nam (giai đoạn 1954-1975) dành cho học sinh các khối lớp.', '18/11/2026', 'Thông báo', 'https://36hn.wordpress.com/wp-content/uploads/2016/06/redsvn-ha-noi-sau-1954-17.jpg')" class="mt-4 inline-flex items-center text-xs font-bold text-pvs-green hover:text-pvs-purple transition-colors">
-                            Đọc tiếp bài viết <i class="fas fa-chevron-right ml-1"></i>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- News Card 3 -->
-                <article class="news-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col" data-category="tin-truong">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="https://36hn.wordpress.com/wp-content/uploads/2016/06/redsvn-ha-noi-sau-1954-17.jpg" 
-                             alt="Lịch sử (giai đoạn 1954-1975)" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-pvs-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Tin nhà trường</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <span class="text-xs text-slate-400 block mb-2"><i class="far fa-calendar-alt mr-1"></i> 18/11/2026</span>
-                            <h3 class="font-bold text-lg text-slate-900 hover:text-pvs-green transition-colors line-clamp-2 mb-3">
-                                Lịch sử (giai đoạn 1954-1975)
-                            </h3>
-                            <p class="text-slate-600 text-xs sm:text-sm line-clamp-3">
-                                Tổ Sử - Địa - GDCD tổ chức buổi ngoại khóa trực quan sinh động về Lịch sử (giai đoạn 1954-1975) tại trường THPT Phạm Văn Sáng...
-                            </p>
-                        </div>
-                        <button onclick="openNewsModal('Lịch sử (giai đoạn 1954-1975)', 'Tổ Sử - Địa - GDCD phối hợp cùng nhà trường tổ chức buổi học ngoại khóa trực quan, giúp các em học sinh hiểu sâu sắc hơn về bối cảnh và ý nghĩa của Lịch sử Việt Nam (giai đoạn 1954-1975).', '18/11/2026', 'Tin nhà trường', 'https://36hn.wordpress.com/wp-content/uploads/2016/06/redsvn-ha-noi-sau-1954-17.jpg')" class="mt-4 inline-flex items-center text-xs font-bold text-pvs-green hover:text-pvs-purple transition-colors">
                             Đọc tiếp bài viết <i class="fas fa-chevron-right ml-1"></i>
                         </button>
                     </div>
