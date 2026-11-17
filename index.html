@@ -386,7 +386,8 @@
                                 Thông báo triển khai nội dung ôn tập và triển lãm hình ảnh tư liệu môn Lịch sử (giai đoạn 1954-1975) cho học sinh toàn trường...
                             </p>
                         </div>
-                        <button onclick="openNewsModal('Lịch sử (giai đoạn 1954-1975)', 'Thông báo triển khai nội dung ôn tập, sinh hoạt ngoại khóa và triển lãm hình ảnh tư liệu quý giá về Lịch sử Việt Nam (giai đoạn 1954-1975) dành cho học sinh các khối lớp.', '18/11/2026', 'Thông báo', 'https://36hn.wordpress.com/wp-content/uploads/2016/06/redsvn-ha-noi-sau-1954-17.jpg')" class="mt-4 inline-flex items-center text-xs font-bold text-pvs-green hover:text-pvs-purple transition-colors">
+                        <!-- Truyền đường dẫn video 'video_1.mp4' vào hàm mở modal -->
+                        <button onclick="openNewsModal('Lịch sử (giai đoạn 1954-1975)', 'Thông báo triển khai nội dung ôn tập, sinh hoạt ngoại khóa và triển lãm hình ảnh tư liệu quý giá về Lịch sử Việt Nam (giai đoạn 1954-1975) dành cho học sinh các khối lớp.', '18/11/2026', 'Thông báo', 'https://36hn.wordpress.com/wp-content/uploads/2016/06/redsvn-ha-noi-sau-1954-17.jpg', 'video_1.mp4')" class="mt-4 inline-flex items-center text-xs font-bold text-pvs-green hover:text-pvs-purple transition-colors">
                             Đọc tiếp bài viết <i class="fas fa-chevron-right ml-1"></i>
                         </button>
                     </div>
@@ -608,6 +609,15 @@
                 <span id="modal-date" class="text-xs text-slate-400 block"></span>
                 <h3 id="modal-title" class="text-2xl font-bold text-slate-900 font-heading"></h3>
                 <p id="modal-content" class="text-slate-600 leading-relaxed text-sm sm:text-base"></p>
+                
+                <!-- PHẦN THÊM VIDEO TRONG MODAL -->
+                <div id="modal-video-container" class="mt-4 hidden">
+                    <video id="modal-video" controls class="w-full rounded-xl shadow-md">
+                        <source id="modal-video-source" src="" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ thẻ video.
+                    </video>
+                </div>
+
                 <div class="pt-4 border-t border-slate-100 flex justify-end">
                     <button onclick="closeNewsModal()" class="px-6 py-2.5 bg-slate-900 text-white font-bold text-xs rounded-xl hover:bg-pvs-green transition-colors">Đóng cửa sổ</button>
                 </div>
@@ -678,18 +688,34 @@
             });
         });
 
-        // 4. Modal Functions
-        function openNewsModal(title, content, date, category, imgSrc) {
+        // 4. Modal Functions (Đã hỗ trợ hiển thị video)
+        function openNewsModal(title, content, date, category, imgSrc, videoSrc) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-content').innerText = content;
             document.getElementById('modal-date').innerText = date;
             document.getElementById('modal-cat').innerText = category;
             document.getElementById('modal-img').src = imgSrc;
+            
+            const videoContainer = document.getElementById('modal-video-container');
+            const videoElement = document.getElementById('modal-video');
+            const videoSource = document.getElementById('modal-video-source');
+            
+            if (videoSrc) {
+                videoSource.src = videoSrc;
+                videoElement.load();
+                videoContainer.classList.remove('hidden');
+            } else {
+                videoElement.pause();
+                videoContainer.classList.add('hidden');
+            }
+
             document.getElementById('news-modal').classList.remove('hidden');
         }
 
         function closeNewsModal() {
             document.getElementById('news-modal').classList.add('hidden');
+            const videoElement = document.getElementById('modal-video');
+            videoElement.pause(); // Tự động dừng video khi đóng modal
         }
 
         // 5. Lightbox Functions
