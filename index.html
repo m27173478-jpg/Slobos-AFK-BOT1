@@ -244,17 +244,26 @@
                     </ul>
                 </div>
 
-                <!-- TRIỂN LÃM INFOGRAPHIC TƯ LIỆU (3 ẢNH MỚI THÊM) -->
+                <!-- TRIỂN LÃM INFOGRAPHIC TƯ LIỆU (ĐÃ TỐI ƯU HIỂN THỊ & ZOOM) -->
                 <div class="mt-8 pt-6 border-t border-slate-100 space-y-8">
-                    <h3 class="text-lg font-bold text-slate-900">
-                        <i class="fas fa-images text-pvs-green mr-2"></i> Triển lãm Infographic Tóm Tắt Lịch Sử (1954 - 1975)
-                    </h3>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <h3 class="text-lg font-bold text-slate-900">
+                            <i class="fas fa-images text-pvs-green mr-2"></i> Triển lãm Infographic Tóm Tắt Lịch Sử (1954 - 1975)
+                        </h3>
+                        <span class="text-xs text-slate-500 italic"><i class="fas fa-search-plus mr-1"></i> Nhấn vào ảnh để phóng to</span>
+                    </div>
 
                     <!-- Ảnh 1: Mở đầu chặng đường lịch sử -->
                     <div class="space-y-2">
                         <p class="text-sm font-semibold text-slate-700">1. Mở đầu chặng đường lịch sử (1954 – 1975) & Chiến tranh đặc biệt (1961 – 1965)</p>
                         <div class="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-slate-50">
-                            <img src="./anh_1.jpg" alt="Mở đầu chặng đường lịch sử 1954 - 1975" class="w-full h-auto object-contain">
+                            <!-- QUAN TRỌNG: Thay chính xác tên file ảnh 1 trên GitHub (ví dụ: 697f4b4a-9ac9-41f3-9950-1d0....jpg) -->
+                            <img src="697f4b4a-9ac9-41f3-9950-1d0_THAY_TEN_DAY_DU_VAO_DAY.jpg" 
+                                 alt="Mở đầu chặng đường lịch sử 1954 - 1975" 
+                                 loading="lazy"
+                                 onclick="openLightbox(this.src)"
+                                 onerror="handleImgError(this)"
+                                 class="w-full h-auto object-contain cursor-zoom-in hover:opacity-95 transition-opacity">
                         </div>
                     </div>
 
@@ -262,7 +271,13 @@
                     <div class="space-y-2">
                         <p class="text-sm font-semibold text-slate-700">2. Phong trào Đồng Khởi (1959 – 1960) và Tổng tiến công Mậu Thân 1968</p>
                         <div class="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-slate-50">
-                            <img src="./anh_2.jpg" alt="Phong trào Đồng Khởi và Tổng tiến công Mậu Thân 1968" class="w-full h-auto object-contain">
+                            <!-- QUAN TRỌNG: Thay chính xác tên file ảnh 2 trên GitHub (ví dụ: bb533df2-5222-4030-9d7a-99....jpg) -->
+                            <img src="bb533df2-5222-4030-9d7a-99_THAY_TEN_DAY_DU_VAO_DAY.jpg" 
+                                 alt="Phong trào Đồng Khởi và Tổng tiến công Mậu Thân 1968" 
+                                 loading="lazy"
+                                 onclick="openLightbox(this.src)"
+                                 onerror="handleImgError(this)"
+                                 class="w-full h-auto object-contain cursor-zoom-in hover:opacity-95 transition-opacity">
                         </div>
                     </div>
 
@@ -270,7 +285,13 @@
                     <div class="space-y-2">
                         <p class="text-sm font-semibold text-slate-700">3. Chiến thắng Điện Biên Phủ trên không (12/1972)</p>
                         <div class="rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-slate-50">
-                            <img src="./anh_3.jpg" alt="Điện Biên Phủ trên không 12/1972" class="w-full h-auto object-contain">
+                            <!-- QUAN TRỌNG: Thay chính xác tên file ảnh 3 trên GitHub (ví dụ: cd426309-cae3-4adc-9d9d-03....jpg) -->
+                            <img src="cd426309-cae3-4adc-9d9d-03_THAY_TEN_DAY_DU_VAO_DAY.jpg" 
+                                 alt="Điện Biên Phủ trên không 12/1972" 
+                                 loading="lazy"
+                                 onclick="openLightbox(this.src)"
+                                 onerror="handleImgError(this)"
+                                 class="w-full h-auto object-contain cursor-zoom-in hover:opacity-95 transition-opacity">
                         </div>
                     </div>
                 </div>
@@ -312,12 +333,18 @@
         </main>
     </div>
 
+    <!-- MODAL PHÓNG TO ẢNH (LIGHTBOX) -->
+    <div id="image-lightbox" onclick="closeLightbox()" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out">
+        <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white/80 hover:text-white text-3xl font-bold">&times;</button>
+        <img id="lightbox-img" src="" alt="Phóng to infographic" class="max-w-full max-h-[92vh] rounded-lg shadow-2xl object-contain">
+    </div>
+
     <!-- FOOTER -->
     <footer id="lien-he" class="bg-slate-900 text-white py-8 text-center text-xs text-slate-500 mt-12">
         <p>© 2026 Bản quyền thuộc về Trường THPT Phạm Văn Sáng - Hóc Môn, TP.HCM.</p>
     </footer>
 
-    <!-- JAVASCRIPT & HIỆU ỨNG HẠT NỀN HERO -->
+    <!-- JAVASCRIPT & HIỆU ỨNG -->
     <script>
         const homeView = document.getElementById('home-view');
         const articleView = document.getElementById('article-view');
@@ -339,6 +366,31 @@
             if (video2) video2.src = video2.src;
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Phóng to / thu nhỏ ảnh Infographic
+        function openLightbox(src) {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('image-lightbox').classList.add('hidden');
+        }
+
+        // Cảnh báo trực quan nếu sai tên file ảnh trên GitHub
+        function handleImgError(img) {
+            img.onerror = null;
+            const fileName = img.getAttribute('src');
+            img.parentElement.innerHTML = `
+                <div class="p-6 text-center text-red-600 bg-red-50 text-sm">
+                    <i class="fas fa-exclamation-triangle text-xl mb-2 block"></i>
+                    Không tìm thấy file ảnh: <strong>${fileName}</strong><br>
+                    <span class="text-xs text-slate-600">Hãy kiểm tra lại tên file (chữ hoa/thường và đuôi .jpg/.png) trên GitHub.</span>
+                </div>
+            `;
         }
 
         // Hiệu ứng hạt chuyển động nền Hero Section
